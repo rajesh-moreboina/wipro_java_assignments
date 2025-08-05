@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Selection</title>
+</head>
+<body>
+    <h2>Select a Product</h2>
+    <form action="productServlet" method="post">
+        <label for="product">Product:</label>
+        <select name="product" id="product" onchange="updatePrice()">
+            <option value="Laptop" data-price="50000">Laptop - ₹50,000</option>
+            <option value="Smartphone" data-price="30000">Smartphone - ₹30,000</option>
+            <option value="Headphones" data-price="2000">Headphones - ₹2,000</option>
+        </select><br><br>
+        <input type="hidden" name="price" id="price" value="50000">
+
+        <input type="submit" value="Next">
+    </form>
+
+    <script>
+        function updatePrice() {
+            var select = document.getElementById("product");
+            var price = select.options[select.selectedIndex].getAttribute('data-price');
+            document.getElementById("price").value = price;
+        }
+    </script>
+</body>
+</html>
