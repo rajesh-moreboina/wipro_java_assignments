@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enrollment Form</title>
+    <style>.error { color: red; }</style>
+</head>
+<body>
+<h2>Enrollment Form</h2>
+
+<form th:action="@{/enroll}" th:object="${enrollmentForm}" method="post">
+
+    First Name: <input type="text" th:field="*{firstName}" /><br/>
+    <div class="error" th:errors="*{firstName}"></div><br/>
+
+    Last Name: <input type="text" th:field="*{lastName}" /><br/>
+    <div class="error" th:errors="*{lastName}"></div><br/>
+
+    Sex:
+    <input type="radio" th:field="*{sex}" value="Male"/>Male
+    <input type="radio" th:field="*{sex}" value="Female"/>Female<br/>
+    <div class="error" th:errors="*{sex}"></div><br/>
+
+    Date of Birth: <input type="date" th:field="*{dob}" /><br/>
+    <div class="error" th:errors="*{dob}"></div><br/>
+
+    Email: <input type="email" th:field="*{email}" /><br/>
+    <div class="error" th:errors="*{email}"></div><br/>
+
+    Section:
+    <select th:field="*{section}">
+        <option value="">--Select--</option>
+        <option th:each="s : ${sections}" th:value="${s}" th:text="${s}"></option>
+    </select><br/>
+    <div class="error" th:errors="*{section}"></div><br/>
+
+    Country:
+    <select th:field="*{country}">
+        <option value="">--Select--</option>
+        <option th:each="c : ${countries}" th:value="${c}" th:text="${c}"></option>
+    </select><br/>
+    <div class="error" th:errors="*{country}"></div><br/>
+
+    First Attempt: <input type="checkbox" th:field="*{firstAttempt}" /><br/><br/>
+
+    Subjects:<br/>
+    <div th:each="s : ${subjects}">
+        <input type="checkbox" th:field="*{subjects}" th:value="${s}" />
+        <span th:text="${s}"></span><br/>
+    </div>
+    <div class="error" th:errors="*{subjects}"></div><br/>
+
+    <input type="submit" value="Register" />
+</form>
+</body>
+</html>
