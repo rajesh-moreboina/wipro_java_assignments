@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Online Conference Registration Form</title>
+<script>
+  function validateForm() {
+    const form = document.forms["confRegForm"];
+    const fullname = form["fullname"].value.trim();
+    const email = form["email"].value.trim();
+    const genderElems = form["gender"];
+    let gender = "";
+    for (const elem of genderElems) {
+      if (elem.checked) {
+        gender = elem.value;
+        break;
+      }
+    }
+    const country = form["country"].value;
+    const profile = form["profile"].value;
+    const username = form["username"].value.trim();
+    const password = form["password"].value;
+    const confirmPassword = form["confirmPassword"].value;
+    const paymentMethod = form["paymentMethod"].value;
+    const cardNumber = form["cardNumber"].value.trim();
+    const expiryMonth = form["expiryMonth"].value;
+    const expiryYear = form["expiryYear"].value;
+    const cvv = form["cvv"].value.trim();
+    const terms = form["terms"].checked;
+
+    if (fullname === "") {
+      alert("Please enter your Full Name.");
+      form["fullname"].focus();
+      return false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "" || !emailPattern.test(email)) {
+      alert("Please enter a valid Email (e.g., user@example.com).");
+      form["email"].focus();
+      return false;
+    }
+
+    if (gender === "") {
+      alert("Please select your Gender.");
+      return false;
+    }
+
+    if (country === "") {
+      alert("Please select your Country.");
+      form["country"].focus();
+      return false;
+    }
+
+    if (profile === "") {
+      alert("Please upload your Profile Photo.");
+      form["profile"].focus();
+      return false;
+    }
+
+    if (username === "") {
+      alert("Please enter a Username.");
+      form["username"].focus();
+      return false;
+    }
+
+    if (password === "") {
+      alert("Please enter a Password.");
+      form["password"].focus();
+      return false;
+    }
+
+    if (confirmPassword === "") {
+      alert("Please confirm your Password.");
+      form["confirmPassword"].focus();
+      return false;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      form["confirmPassword"].focus();
+      return false;
+    }
+
+    if (paymentMethod === "") {
+      alert("Please select a Payment Method.");
+      form["paymentMethod"].focus();
+      return false;
+    }
+
+    if (cardNumber === "" || cardNumber.length < 12) {
+      alert("Please enter a valid Card Number.");
+      form["cardNumber"].focus();
+      return false;
+    }
+
+    if (expiryMonth === "" || expiryYear === "") {
+      alert("Please select Expiry Month and Year.");
+      return false;
+    }
+
+    if (!/^\d{3}$/.test(cvv)) {
+      alert("Please enter a valid 3-digit CVV.");
+      form["cvv"].focus();
+      return false;
+    }
+
+    if (!terms) {
+      alert("You must agree to the Terms & Conditions.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+</head>
+<body>
+
+<h1 style="text-align:center; margin-bottom: 20px;">Online Conference Registration Form</h1>
+
+<form name="confRegForm" action="#" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+  <table border="1" cellpadding="10" cellspacing="0" style="width: 70%; margin:auto; border-collapse: collapse; font-family: Arial, sans-serif;">
+
+    <!-- Personal Information -->
+    <tr style="background-color:#dceefc;">
+      <th colspan="2" style="text-align:left;">Personal Information</th>
+    </tr>
+    <tr>
+      <td><label for="fullname">Full Name:</label></td>
+      <td>
+        <input type="text" id="fullname" name="fullname" style="width: 100%;" />
+        <small>Required</small>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="email">Email Address:</label></td>
+      <td>
+        <input type="text" id="email" name="email" style="width: 100%;" />
+        <small>Format: user@example.com</small>
+      </td>
+    </tr>
+    <tr>
+      <td>Gender:</td>
+      <td>
+        <input type="radio" id="gender_m" name="gender" value="Male" />
+        <label for="gender_m">Male</label>
+        <input type="radio" id="gender_f" name="gender" value="Female" />
+        <label for="gender_f">Female</label>
+        <input type="radio" id="gender_o" name="gender" value="Other" />
+        <label for="gender_o">Other</label>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="country">Country:</label></td>
+      <td>
+        <select id="country" name="country" style="width: 100%;">
+          <option value="">--Select Country--</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="UK">UK</option>
+          <option value="Australia">Australia</option>
+          <option value="India">India</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="profile">Profile Photo Upload:</label></td>
+      <td><input type="file" id="profile" name="profile" /></td>
+    </tr>
+
+    <!-- Account Preferences -->
+    <tr style="background-color:#dceefc;">
+      <th colspan="2" style="text-align:left;">Account Preferences</th>
+    </tr>
+    <tr>
+      <td><label for="username">Username:</label></td>
+      <td><input type="text" id="username" name="username" style="width: 100%;" /></td>
+    </tr>
+    <tr>
+      <td><label for="password">Password:</label></td>
+      <td><input type="password" id="password" name="password" style="width: 100%;" /></td>
+    </tr>
+    <tr>
+      <td><label for="confirmPassword">Confirm Password:</label></td>
+      <td><input type="password" id="confirmPassword" name="confirmPassword" style="width: 100%;" /></td>
+    </tr>
+    <tr>
+      <td>Interests:</td>
+      <td>
+        <input type="checkbox" id="interest_web" name="interests" value="Web Development" />
+        <label for="interest_web">Web Development</label><br />
+        <input type="checkbox" id="interest_ai" name="interests" value="AI" />
+        <label for="interest_ai">AI</label><br />
+        <input type="checkbox" id="interest_cloud" name="interests" value="Cloud" />
+        <label for="interest_cloud">Cloud</label>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="contactMethod">Preferred Contact Method:</label></td>
+      <td>
+        <select id="contactMethod" name="contactMethod" style="width: 100%;">
+          <option value="">--Select--</option>
+          <option value="Email">Email</option>
+          <option value="Phone">Phone</option>
+          <option value="None">None</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="comments">Special Requirements / Comments:</label></td>
+      <td><textarea id="comments" name="comments" rows="4" style="width: 100%;"></textarea></td>
+    </tr>
+
+    <!-- Payment Details -->
+    <tr style="background-color:#dceefc;">
+      <th colspan="2" style="text-align:left;">Payment Details</th>
+    </tr>
+    <tr>
+      <td><label for="paymentMethod">Payment Method:</label></td>
+      <td>
+        <select id="paymentMethod" name="paymentMethod" style="width: 100%;">
+          <option value="">--Select--</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="PayPal">PayPal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="cardNumber">Card Number:</label></td>
+      <td><input type="text" id="cardNumber" name="cardNumber" style="width: 100%;" /></td>
+    </tr>
+    <tr>
+      <td><label>Expiry Date:</label></td>
+      <td>
+        <select id="expiryMonth" name="expiryMonth" style="width: 48%; display: inline-block;">
+          <option value="">Month</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select id="expiryYear" name="expiryYear" style="width: 48%; display: inline-block;">
+          <option value="">Year</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="cvv">CVV:</label></td>
+      <td><input type="password" id="cvv" name="cvv" size="3" maxlength="3" style="width: 50px;" /></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        <input type="checkbox" id="terms" name="terms" />
+        <label for="terms">I agree to the Terms & Conditions</label>
+      </td>
+    </tr>
+
+    <!-- Form Controls -->
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        <input type="submit" value="Submit" style="padding: 8px 16px; margin-right: 10px;" />
+        <input type="reset" value="Reset" style="padding: 8px 16px;" />
+      </td>
+    </tr>
+
+  </table>
+</form>
+
+</body>
+</html>

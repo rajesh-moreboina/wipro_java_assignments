@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>BookWorld - Your Online Bookstore</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+
+<!-- 1. Title & Heading -->
+<h1 style="text-align:center; color: #2c3e50;">BookWorld - Your Online Bookstore</h1>
+
+<!-- 2. Banner Image & Description -->
+<div style="text-align:center;">
+  <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80" 
+       alt="Books Banner" style="width: 80%; max-width: 700px; height: auto; border-radius: 8px;" />
+  <p style="max-width: 700px; margin: 15px auto; font-size: 1.1em; color: #555;">
+    Welcome to BookWorld, your one-stop shop for the best books across all genres. 
+    Explore new arrivals, best-sellers, and exclusive previews. Happy reading!
+  </p>
+</div>
+
+<!-- 3. Book Categories Table -->
+<h2>Book Categories</h2>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 80%; max-width: 700px; margin-bottom: 20px;">
+  <thead style="background-color:#f4f4f4;">
+    <tr>
+      <th style="text-align:left;">Category</th>
+      <th style="text-align:center;">Number of Books</th>
+      <th style="text-align:left;">Top Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fiction</td>
+      <td style="text-align:center;">120</td>
+      <td>J.K. Rowling</td>
+    </tr>
+    <tr>
+      <td>Non-Fiction</td>
+      <td style="text-align:center;">80</td>
+      <td>Malcolm Gladwell</td>
+    </tr>
+    <tr>
+      <td>Science Fiction</td>
+      <td style="text-align:center;">60</td>
+      <td>Isaac Asimov</td>
+    </tr>
+    <tr>
+      <td>Biographies</td>
+      <td style="text-align:center;">40</td>
+      <td>Walter Isaacson</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 4. Best-Sellers and Upcoming Releases -->
+<div style="display:flex; justify-content:space-around; max-width: 700px; margin-bottom: 20px;">
+  <div style="width: 45%;">
+    <h3>Top 5 Best-Selling Books</h3>
+    <ol>
+      <li>The Midnight Library</li>
+      <li>Atomic Habits</li>
+      <li>Where the Crawdads Sing</li>
+      <li>Becoming</li>
+      <li>The Silent Patient</li>
+    </ol>
+  </div>
+  <div style="width: 45%;">
+    <h3>Upcoming Releases</h3>
+    <ul>
+      <li>The Last Graduate</li>
+      <li>Project Hail Mary</li>
+      <li>The Paper Palace</li>
+      <li>Klara and the Sun</li>
+      <li>The Night Circus</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 5. Book Preview Video -->
+<h2>Book Preview</h2>
+<div style="text-align:center; margin-bottom: 30px;">
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/5qap5aO4i9A"
+    title="Book Preview Video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+<!-- 6. Registration Form -->
+<h2>Register for BookWorld Newsletter</h2>
+<form action="#" method="post" style="max-width: 500px; margin-bottom: 30px;">
+  <label for="name">Name:</label><br />
+  <input type="text" id="name" name="name" style="width: 100%; padding: 8px;" required /><br /><br />
+
+  <label for="email">Email:</label><br />
+  <input type="email" id="email" name="email" style="width: 100%; padding: 8px;" required /><br /><br />
+
+  <label for="genre">Favorite Genre:</label><br />
+  <select id="genre" name="genre" style="width: 100%; padding: 8px;">
+    <option value="">--Select Genre--</option>
+    <option value="fiction">Fiction</option>
+    <option value="non-fiction">Non-Fiction</option>
+    <option value="sci-fi">Science Fiction</option>
+    <option value="biographies">Biographies</option>
+    <option value="fantasy">Fantasy</option>
+  </select><br /><br />
+
+  <label for="comments">Comments:</label><br />
+  <textarea id="comments" name="comments" rows="4" style="width: 100%; padding: 8px;"></textarea><br /><br />
+
+  <input type="submit" value="Subscribe" style="padding: 10px 20px; background-color:#2c3e50; color: white; border: none; cursor: pointer;" />
+</form>
+
+<!-- 7. Links Section -->
+<h2>Useful Links</h2>
+<ul>
+  <li><a href="https://www.goodreads.com" target="_blank" rel="noopener noreferrer">Goodreads</a> (opens in new tab)</li>
+  <li><a href="https://www.bookdepository.com">Book Depository</a></li>
+  <li><a href="https://www.nytimes.com/books/">NY Times Books</a></li>
+</ul>
+
+<!-- 8. Contact Info -->
+<h2>Contact Us</h2>
+<address style="font-style: normal; max-width: 700px;">
+  <strong>BookWorld Bookstore</strong><br />
+  123 Book St, Reading City, 45678<br />
+  Phone: +1 (555) 123-4567<br />
+  Email: <a href="mailto:info@bookworld.com">info@bookworld.com</a>
+</address>
+
+</body>
+</html>
