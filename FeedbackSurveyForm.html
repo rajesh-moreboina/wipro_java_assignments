@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Feedback Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header, nav, main, aside, footer {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: blue;
+        }
+        form {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+        }
+        .inline {
+            width: auto;
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Website Feedback Survey</h1>
+        <p>We value your opinion. Please take a minute to share your thoughts.</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <form action="feedback.php" method="POST">
+            
+            <!-- Section 1: Personal Info -->
+            <section>
+                <h2>Personal Information</h2>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="10" max="100">
+            </section>
+
+            <!-- Section 2: Website Rating -->
+            <section>
+                <h2>Website Rating</h2>
+
+                <label for="design">Rate website design:</label>
+                <input type="range" id="design" name="design" min="1" max="10">
+
+                <label>Rate content quality:</label>
+                <input type="radio" class="inline" name="content_quality" value="Excellent"> Excellent
+                <input type="radio" class="inline" name="content_quality" value="Good"> Good
+                <input type="radio" class="inline" name="content_quality" value="Average"> Average
+                <input type="radio" class="inline" name="content_quality" value="Poor"> Poor
+
+                <label for="visited">Most visited page:</label>
+                <select id="visited" name="visited">
+                    <option value="Home">Home</option>
+                    <option value="Blog">Blog</option>
+                    <option value="Products">Products</option>
+                    <option value="Contact">Contact</option>
+                </select>
+            </section>
+
+            <!-- Section 3: Suggestions -->
+            <section>
+                <h2>Suggestions</h2>
+
+                <label for="comments">Your Suggestions:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+
+                <label>
+                    <input type="checkbox" name="contact_permission">
+                    I agree to be contacted regarding my feedback
+                </label>
+            </section>
+
+            <!-- Submit -->
+            <button type="submit">Submit Feedback</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </main>
+
+    <!-- Aside -->
+    <aside>
+        <p><strong>Note:</strong> Your feedback helps us improve our website experience for everyone.</p>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Website Survey
+    </footer>
+
+</body>
+</html>
