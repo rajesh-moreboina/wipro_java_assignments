@@ -14,6 +14,24 @@
     .dropdown-menu {
       background-color: white;
     }
+    /* Search input red background with white text */
+    form.d-flex input.form-control {
+      background-color: #dc3545; /* Bootstrap's danger/red color */
+      color: white;
+      border: 1px solid #dc3545;
+    }
+    /* Change placeholder color to lighter white */
+    form.d-flex input.form-control::placeholder {
+      color: #f8d7da;
+      opacity: 1; /* Ensure visibility */
+    }
+    /* On focus, keep red background and white text */
+    form.d-flex input.form-control:focus {
+      background-color: #b02a37; /* Darker red */
+      color: white;
+      border-color: #b02a37;
+      box-shadow: none;
+    }
   </style>
 </head>
 <body>
