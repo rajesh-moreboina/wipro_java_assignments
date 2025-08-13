@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Share Market</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f5f7fa;
+    }
+    .stock-logo {
+      max-width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Share Market</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Market Trends</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Top Gainers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Top Losers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container my-5">
+
+  <!-- Row 1: Three cards -->
+  <div class="row g-4 mb-4">
+    <!-- Top Gainer -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+            alt="Apple Logo"
+            class="stock-logo"
+          />
+          <div>
+            <h5 class="card-title fw-bold mb-1">Apple Inc. (AAPL)</h5>
+            <p class="card-text mb-1">$175.64</p>
+            <p class="card-text text-success fw-bold">+3.24%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Loser -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+            alt="Google Logo"
+            class="stock-logo"
+          />
+          <div>
+            <h5 class="card-title fw-bold mb-1">Alphabet Inc. (GOOGL)</h5>
+            <p class="card-text mb-1">$2683.42</p>
+            <p class="card-text text-danger fw-bold">-1.78%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Most Active -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+            alt="Amazon Logo"
+            class="stock-logo"
+            style="max-width: 70px;"
+          />
+          <div>
+            <h5 class="card-title fw-bold mb-1">Amazon.com (AMZN)</h5>
+            <p class="card-text mb-1">Volume Traded: 35M</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Two cards -->
+  <div class="row g-4">
+    <!-- Trending Stocks List -->
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold mb-3">Trending Stocks</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Tesla (TSLA)
+              <span class="badge bg-success rounded-pill">+4.5%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Nvidia (NVDA)
+              <span class="badge bg-success rounded-pill">+3.1%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Microsoft (MSFT)
+              <span class="badge bg-success rounded-pill">+2.2%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Meta Platforms (META)
+              <span class="badge bg-danger rounded-pill">-1.2%</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Netflix (NFLX)
+              <span class="badge bg-danger rounded-pill">-0.8%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Market Summary -->
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold mb-3">Market Summary</h5>
+          <p class="card-text">
+            The stock market experienced moderate volatility today as investors reacted to economic data and corporate earnings reports. Technology stocks led the gains, while consumer goods faced some pressure. Analysts predict cautious optimism as markets adjust to ongoing global developments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+  <div class="container">
+    Data for educational purposes only — Share Market 2025
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
