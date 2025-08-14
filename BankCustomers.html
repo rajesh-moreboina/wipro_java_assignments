@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Customers Management</title>
+</head>
+<body>
+  <h2>Bank Customers – Dynamic Array Creation & Manipulation</h2>
+  <pre id="output"></pre>
+
+  <script>
+    let output = "";
+
+    // Step 1: Number of customers (hardcoded as per sample)
+    let customers = ["Raj", "Priya", "Karthik"];
+
+    // Original customers
+    output += "Original Customers: " + customers.join(", ") + "\n";
+
+    // Step 3: Customers using for...of
+    output += "Customers using for...of:\n";
+    for (let customer of customers) {
+      output += customer + "\n";
+    }
+
+    // Step 4: Customer IDs using for...in
+    output += "Customer IDs using for...in:\n";
+    for (let id in customers) {
+      output += id + "\n";
+    }
+
+    // Step 5: Add new customer using push()
+    customers.push("Anita");
+    output += "After push('Anita'): " + customers.join(", ") + "\n";
+
+    // Step 6: Remove last customer using pop()
+    customers.pop();
+    output += "After pop(): " + customers.join(", ") + "\n";
+
+    // Step 7: Insert new customer at position 1 using splice()
+    customers.splice(1, 0, "Vikram");
+    output += "After insert 'Vikram' at position 1: " + customers.join(", ") + "\n";
+
+    // Step 8: Delete customer at position 2 using splice()
+    customers.splice(2, 1);
+    output += "After delete at position 2: " + customers.join(", ") + "\n";
+
+    // Step 9: Final customer list
+    output += "Final Customers: " + customers.join(", ");
+
+    // Display result on webpage
+    document.getElementById("output").textContent = output;
+  </script>
+</body>
+</html>

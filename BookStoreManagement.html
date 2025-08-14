@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Store Management</title>
+</head>
+<body>
+  <h2>JSON – Book Store Management</h2>
+  <pre id="output"></pre>
+
+  <script>
+    let output = "";
+
+    // Step 1: Create JSON array of books
+    let books = [
+      { title: "JavaScript Basics", author: "Anu", price: 450, available: true },
+      { title: "HTML & CSS", author: "Devi", price: 350, available: false }
+    ];
+
+    // Step 2: Display all books
+    output += "All Books:\n";
+    for (let book of books) {
+      output += `Title: ${book.title}, Author: ${book.author}, Price: ${book.price}, Available: ${book.available} ₹\n`;
+    }
+
+    // Step 3: Display only available books
+    output += "Available Books:\n";
+    for (let book of books) {
+      if (book.available) {
+        output += `Title: ${book.title}, Author: ${book.author}, Price: ${book.price} ₹\n`;
+      }
+    }
+
+    // Step 4: Add a new book
+    books.push({ title: "Node.js Guide", author: "Ravi", price: 600, available: true });
+    output += "After Adding:\n";
+    output += books.map(b => b.title).join(", ") + "\n";
+
+    // Step 5: Update price of a specific book ("JavaScript Basics")
+    let bookToUpdate = books.find(b => b.title === "JavaScript Basics");
+    if (bookToUpdate) {
+      bookToUpdate.price = 500;
+    }
+    output += "After Price Update:\n";
+    output += books.map(b => `${b.title} - ${b.price}`).join("\n") + " ₹\n";
+
+    // Step 6: Delete a book ("JavaScript Basics")
+    books = books.filter(b => b.title !== "JavaScript Basics");
+    output += "After Deletion:\n";
+    output += books.map(b => b.title).join(", ");
+
+    // Display output
+    document.getElementById("output").textContent = output;
+  </script>
+</body>
+</html>

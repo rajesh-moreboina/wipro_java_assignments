@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equality & Inequality Checker</title>
+</head>
+<body>
+  <script>
+    // Step 1: Get input values
+    let firstValue = prompt("Enter the first value:");
+    let secondValue = prompt("Enter the second value:");
+
+    // Step 2: Convert second value to number to show difference in type
+    let secondValueNumber = Number(secondValue);
+
+    // Show types
+    let firstType = typeof firstValue; // Will always be string from prompt
+    let secondType = typeof secondValueNumber;
+
+    // Step 3: Comparisons
+    let eq = (firstValue == secondValueNumber);
+    let strictEq = (firstValue === secondValueNumber);
+    let neq = (firstValue != secondValueNumber);
+    let strictNeq = (firstValue !== secondValueNumber);
+
+    // Step 4: Output result
+    let result = `
+First Value: ${firstValue} (${firstType})
+Second Value: ${secondValueNumber} (${secondType})
+Using == : ${eq} → Equality ignores type
+Using === : ${strictEq} → Strict equality checks type too
+Using != : ${neq} → Values considered equal
+Using !== : ${strictNeq} → Strict inequality because types differ
+`;
+
+    alert(result);
+    console.log(result); // Also log in console
+  </script>
+</body>
+</html>
