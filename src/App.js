@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+// // import React from "react";
+// // import GroceryList from "./GroceryList";
+
+// // function App() {
+// //   const groceries = ["Rice", "Wheat", "Sugar", "Milk", "Oil"];
+
+// //   return (
+// //     <div>
+// //       <GroceryList items={groceries} />
+// //     </div>
+// //   );
+// // }
+
+// // export default App;
+
+// import React from "react";
+// import Car from "./Car";
+
+// function App() {
+//   return (
+//     <div>
+//       <Car brand="Toyota" model="Fortuner" color="Black" year="2022" />
+//     </div>
+//   );
+// }
+
+// export default App;
+import React from "react";
+import GroceryList from "./GroceryList";
+import Car from "./Car";
 
 function App() {
+  const groceries = ["Rice", "Wheat", "Sugar", "Milk", "Oil"];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Question 1: Grocery List */}
+      <GroceryList items={groceries} />
+
+      <hr /> {/* horizontal line to separate sections */}
+
+      {/* Question 2: Car Details */}
+      <Car brand="Toyota" model="Fortuner" color="Black" year="2022" />
     </div>
   );
 }
